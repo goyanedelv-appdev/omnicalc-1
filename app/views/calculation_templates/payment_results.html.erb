@@ -2,7 +2,7 @@
 
 <dl>
   <dt> APR </dt>
-  <dd> <%= @apr%> </dd>
+  <dd> <%=@apr +"%"%> </dd>
 
   <dt> Number of years </dt>
   <dd> <%= @noy %> </dd>
@@ -11,6 +11,6 @@
   <dd> <%= @principal %> </dd>
 
   <dt> Payment </dt>
-  <dd> <%= "$#{@pmt}" %> </dd>
+  <dd> <%= @pmt %> </dd>
 </dl>
 <a href="/payment/new"> Calculate another payment </a>

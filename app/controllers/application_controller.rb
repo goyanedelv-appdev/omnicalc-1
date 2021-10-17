@@ -46,9 +46,11 @@ class ApplicationController < ActionController::Base
 
     @pmt = @principal * @mpr * ((1 + @mpr)**(@noy*12))/(((1 + @mpr)**(@noy*12)) -1)
 
-    @apr = (@apr*100).to_s(:percentage).#sprintf("%.4f",@apr*100)
-    @principal = @principal.to_s(:currency) #sprintf("%.2f",@principal)
-    @pmt = sprintf("%.2f",@pmt)
+    @aux = ((@apr*100))
+
+    @apr = sprintf("%.4f", @aux)
+    @principal = @principal.to_s(:currency)
+    @pmt = @pmt.to_s(:currency)
 
     render({ :template => "calculation_templates/payment_results.html.erb"})
   end
